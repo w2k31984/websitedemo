@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destapa tu Era!</title>
+    <link rel="icon" type="imgs\favicon.ico" href="imgs/favicon.ico" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnjs.com/css2?family=Satisfy&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fee2e7 0%, #f7f7f7 100%);
+        }
+
+        /* Navegación */
+        .nav {
+            background-color: #e31837;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-list a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-list a:hover {
+            color: #ffd700;
+        }
+
+        .header {
+            background-color: #e31837;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .title {
+            font-family: 'Satisfy', cursive;
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .grid img:hover {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .description {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            line-height: 1.6;
+            margin: 2rem 0;
+        }
+
+        .highlight {
+            color: #e31837;
+            font-weight: bold;
+        }
+
+        /* Formulario */
+        .form-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .phone-input {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .flag-select {
+            width: 100px;
+        }
+
+        .submit-btn {
+            background-color: #e31837;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #b31229;
+        }
+
+        /* Secciones de Premios */
+        .prizes-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .prize-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .prize-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .prize-card img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .phone-input {
+                flex-direction: column;
+            }
+
+            .flag-select {
+                width: 100%;
+            }
+
+            .social-container {
+                text-align: center;
+            }
+
+            .social-container h1 {
+                margin-bottom: 20px;
+            }
+
+            .social-icons a {
+                text-decoration: none;
+                color: #333;
+                font-size: 40px;
+                margin: 0 15px;
+                transition: color 0.3s;
+            }
+
+            .social-icons a:hover {
+                color: #0073e6;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#participar">Participar</a></li>
+            <li><a href="#dinamicas">Dinámicas</a></li>
+            <li><a href="#premios">Canjear Premios</a></li>
+        </ul>
+    </nav>
+
+    <div class="header">
+        <h1 class="title">¡Destapa tu Era! </h1>
+    </div>
+
+    <div class="container">
+        <div class="grid">
+            <img src="imgs\WEB10.png" alt="Coca-Cola Eras Tour Can" />
+            <img src="imgs\WEB5.png" alt="Fan with Coca-Cola Can" />
+            <img src="imgs\WEB11.png" alt="Friends sharing Coca-Cola" />
+        </div>
+
+        <div class="description">
+            <p>El sabor y diseño de lata está inspirado en todas las eras más icónicas de Taylor Swift, desde el country
+                de <span class="highlight">Fearless</span> hasta el estilo pop de <span class="highlight">1989</span> y
+                la introspección de <span class="highlight">Folklore</span> y <span class="highlight">Evermore</span>.
+                La campaña combina la nostalgia y emoción de los fanáticos con una experiencia de marca atractiva y
+                coleccionable.</p>
+
+            <p>Se englobarían en una sola lata las 11 eras de Taylor Swift, combinando los diseños de cada uno de los
+                álbumes y creando una mezcla de sabor único que refleje la esencia de su trayectoria.</p>
+
+            <p>Si existiera una sola edición limitada de Coca-Cola inspirada en todas las eras de Taylor Swift, el sabor
+                podría ser una <span class="highlight">"mezcla de frutos rojos y flores como lavanda y rosa"</span>, un
+                sabor multifacético que engloba la evolución de Taylor a través de sus distintas etapas musicales.</p>
+
+            <p>Este sabor sería una mezcla compleja y equilibrada, dulce y floral, con un toque de especias suaves y una
+                frescura
+                refrescante, capturando las diversas emociones, géneros y momentos que han definido la carrera de Taylor
+                Swift. Podría
+                ser algo vibrante, pero con capas más profundas, que se desarrollan mientras se disfruta, reflejando
+                cómo su música ha
+                crecido, evolucionado y experimentado con el paso del tiempo.</p>
+        </div>
+
+        <section id="participar" class="form-section">
+            <h2>Participa y Gana</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Nombre Completo</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">País</label>
+                    <select id="country" required>
+                        <option value="">Selecciona tu país</option>
+                        <option value="AR">Argentina 🇦🇷</option>
+                        <option value="MX">México 🇲🇽</option>
+                        <option value="CO">Colombia 🇨🇴</option>
+                        <option value="ES">España 🇪🇸</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <div class="phone-input">
+                        <select class="flag-select">
+                            <option value="+54">🇦🇷 +54</option>
+                            <option value="+52">🇲🇽 +52</option>
+                            <option value="+57">🇨🇴 +57</option>
+                            <option value="+34">🇪🇸 +503</option>
+                        </select>
+                        <input type="tel" pattern="[0-9]{10}" placeholder="Número de teléfono">
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Participar</button>
+            </form>
+        </section>
+
+        <section id="dinamicas" class="prizes-section">
+            <h2>Dinámicas para Ganar</h2>
+            <div class="prize-grid">
+                <div class="prize-card">
+                    <img src="imgs\WEB4.png" alt="Dinámica 1">
+                    <h3>Comparte tu Era Favorita</h3>
+                    <p>Sube una foto con tu lata y cuéntanos por qué es tu era favorita.</p>
+                </div>
+                <div class="prize-card">
+                    <img src="imgs\WEB14.png" alt="Dinámica 2">
+                    <h3>Trivia Musical</h3>
+                    <p>Participa en nuestra trivia semanal y gana premios exclusivos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="premios" class="prizes-section">
+            <h2>Canjea tus Premios</h2>
+            <div class="prize-grid">
+                <div class="prize-card">
+                    <img src="imgs\WEB10.png" alt="Premio 1">
+                    <h3>Pósters Exclusivos</h3>
+                    <p>500 puntos</p>
+                </div>
+                <div class="prize-card">
+                    <img src="imgs\WEB6.png" alt="Premio 2">
+                    <h3>Merchandising Oficial</h3>
+                    <p>1000 puntos</p>
+                </div>
+                <div class="prize-card">
+                    <img src="imgs\WEB12.png" alt="Premio 3">
+                    <h3>Experiencias VIP</h3>
+                    <p>2000 puntos</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="social-container"></div>
+        <h1>¡Síguenos en nuestras redes sociales! y mencionanos con el hashtag #DestapaTuEra</h1>
+        <div class="social-icons">
+            <a href="imgs/facebook_icon.png" target="_blank" title="Facebook">🌐 Facebook</a>
+            <a href="https://www.twitter.com/tuusuario" target="_blank" title="Twitter">🐦 Twitter</a>
+            <a href="https://www.instagram.com/tuusuario" target="_blank" title="Instagram">📸 Instagram</a>
+            <a href="https://www.linkedin.com/in/tuusuario" target="_blank" title="LinkedIn">💼 LinkedIn</a>
+        </div>
+        </div>
+        <br>
+        <p>© 2024 Coca-Cola Company. Todos los derechos reservados.</p>
+        <p>The Era's Tour es una marca registrada de Taylor Swift.</p>
+    </footer>
+</body>
+
+</html>
